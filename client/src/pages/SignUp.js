@@ -14,13 +14,14 @@ function SignUp(props) {
     password2: "",
     username: "",
   });
-  const [error, seterror] = useState("Error");
+  const [error, seterror] = useState("");
 
   const addvalues = (e) => {
     setvalues({ ...values, [e.target.name]: e.target.value });
   };
 
   const submitData = (e) => {
+    seterror("");
     e.preventDefault();
     axios
       .post("/signup", values)
@@ -29,8 +30,7 @@ function SignUp(props) {
         props.history.push("/");
       })
       .catch((err) => {
-        console.log(err);
-        seterror("error", err);
+        seterror(err.response.data.message);
       });
   };
 
@@ -83,6 +83,9 @@ function SignUp(props) {
           {error && <p>{error}</p>}
           <Button>SignUp</Button>
         </Form>
+        <h6>
+          Already have an account? <Link to="/login">Login</Link>
+        </h6>
       </DemoPageWrap>
     </div>
   );

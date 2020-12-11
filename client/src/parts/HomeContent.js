@@ -35,12 +35,18 @@ const HomeContentWrapper = styled.div`
 function HomeContent() {
   return (
     <HomeContentWrapper>
-      <h1>Do you need Help?</h1>
+      <h1>
+        Hi!
+        <span role="img" aria-label="welcome">
+          &#128567;
+        </span>
+        , how can we be of service?
+      </h1>
       <Link to="/distress">
-        <Button>Distress Signal</Button>
+        <Button danger>Distress Signal</Button>
       </Link>
       <Link to="/message">
-        <Button>SOS Message</Button>
+        <Button secondary>SOS Message</Button>
       </Link>
       <Link to="/login">
         <Button>Login</Button>

@@ -12,6 +12,7 @@ function Login(props) {
     email: "",
     password: "",
   });
+  const [error, seterror] = useState("");
 
   const addvalues = (e) => {
     setvalues({ ...values, [e.target.name]: e.target.value });
@@ -26,7 +27,7 @@ function Login(props) {
         props.history.push("/");
       })
       .catch((err) => {
-        console.log(err);
+        seterror(err.response.data.message);
       });
   };
 
@@ -58,8 +59,12 @@ function Login(props) {
             onChange={addvalues}
           />
         </div>
+        {error && <p>{error}</p>}
         <Button>Login</Button>
       </Form>
+      <h6>
+        Don't have an account? <Link to="/signin">Sign Up</Link>
+      </h6>
     </DemoPageWrap>
   );
 }

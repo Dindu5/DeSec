@@ -6,7 +6,7 @@ import styled from "styled-components";
 const OverlayWrapper = styled.div`
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(170.46deg, #a012a3 8.02%, #ee1df3 89.06%);
+  background: #3d5af1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,7 +19,7 @@ const OverlayWrapper = styled.div`
     overflow: hidden;
     h1 {
       font-size: 3rem;
-      color: var(--white);
+      color: #e2f3f5;
     }
   }
 `;
@@ -50,7 +50,7 @@ function Overlay() {
   return (
     <OverlayWrapper ref={(el) => (screen = el)}>
       <div>
-        <h1>Help</h1>
+        <h1>Get Help Quickly!</h1>
       </div>
     </OverlayWrapper>
   );

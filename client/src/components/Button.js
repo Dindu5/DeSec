@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Button = styled.button`
   display: block;
@@ -12,6 +12,18 @@ const Button = styled.button`
   color: var(--white);
   font-family: var(--main-font);
   margin: auto;
+
+  ${(props) =>
+    props.danger &&
+    css`
+      background-color: #e41749;
+    `}
+
+  ${(props) =>
+    props.secondary &&
+    css`
+      background-color: #f85959;
+    `}
 
   &:hover,
   &:focus {

@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap");
 
 :root {
-  --main-color: #b815bb;
+  --main-color: #3d5af1;
   --white: #ffffff;
   --p-font: 1.2rem;
   --padding: 7rem;
@@ -22,7 +22,7 @@ html {
 
 body {
   font-family: var(--main-font);
-  background: var(--bg-grad);
+  background: #0e153a;
   min-height: 100vh;
   width: 100vw;
   overflow-x: hidden;
