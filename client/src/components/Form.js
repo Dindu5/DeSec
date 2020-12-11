@@ -23,6 +23,12 @@ const Form = styled.form`
       margin-bottom: 0.5rem;
     }
   }
+  p {
+    color: red;
+    text-align: center;
+    margin-top: 2rem;
+    font-weight: 600;
+  }
 
   button {
     margin-top: 2rem;

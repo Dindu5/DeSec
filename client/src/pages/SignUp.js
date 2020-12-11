@@ -10,9 +10,11 @@ import { BiLeftArrow } from "react-icons/bi";
 function SignUp(props) {
   const [values, setvalues] = useState({
     email: "",
-    password: "",
+    password1: "",
+    password2: "",
     username: "",
   });
+  const [error, seterror] = useState("Error");
 
   const addvalues = (e) => {
     setvalues({ ...values, [e.target.name]: e.target.value });
@@ -28,6 +30,7 @@ function SignUp(props) {
       })
       .catch((err) => {
         console.log(err);
+        seterror("error", err);
       });
   };
 
@@ -40,7 +43,7 @@ function SignUp(props) {
       </Return>
       <DemoPageWrap>
         <h2>Sign Up to enjoy awesome features</h2>
-        <Form onSubmit={submitData}>
+        <Form onSubmit={submitData} noValidate>
           <div>
             <label htmlFor="Username">Username</label>
             <input
@@ -63,11 +66,21 @@ function SignUp(props) {
             <label htmlFor="password">Pasword</label>
             <input
               type="password"
-              name="password"
+              name="password1"
               value={values.password}
               onChange={addvalues}
             />
           </div>
+          <div>
+            <label htmlFor="password">Pasword</label>
+            <input
+              type="password"
+              name="password2"
+              value={values.password}
+              onChange={addvalues}
+            />
+          </div>
+          {error && <p>{error}</p>}
           <Button>SignUp</Button>
         </Form>
       </DemoPageWrap>
